@@ -124,6 +124,18 @@
             </field>
         </record>
 
+        <record id="view_business_requirement_pivot"
+                model="ir.ui.view">
+            <field name="name">business.requirement.pivot</field>
+            <field name="model">business.requirement</field>
+            <field name="arch" type="xml">
+                <pivot string="Project Tasks">
+                    <field name="project_id" type="row"/>
+                    <field name="priority" type="row"/>
+                </pivot>
+            </field>
+        </record>
+
         <record id="view_business_requirement_category_form" model="ir.ui.view">
             <field name="name">business.requirement.category.form</field>
             <field name="model">business.requirement.category</field>
@@ -142,7 +154,7 @@
         </record>
 
         <record id="view_business_requirement_category_tree" model="ir.ui.view">
-            <field name="name">business.requirement.category.form</field>
+            <field name="name">business.requirement.category.tree</field>
             <field name="model">business.requirement.category</field>
             <field name="type">tree</field>
             <field name="priority">20</field>
@@ -187,7 +199,7 @@
         <record model="ir.actions.act_window" id="action_business_requirement_tree">
             <field name="name">Business Requirement</field>
             <field name="res_model">business.requirement</field>
-            <field name="view_mode">tree,form,graph</field>
+            <field name="view_mode">tree,form,graph,pivot</field>
             <field name="view_type">form</field>
             <field name="context">{}</field>
         </record>
